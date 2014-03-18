@@ -1,0 +1,73 @@
+apply plugin: 'scala'
+//apply plugin: 'idea'
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
+version = '1.0'
+
+repositories {
+  mavenCentral()
+  maven {
+      url "https://oss.sonatype.org/content/repositories/releases/"
+  }
+  maven {
+      url "http://maven.twttr.com/"
+  }
+}
+
+ext {
+  scalaVersion = '2.10'
+  scalaVersionRevision = '3'
+  specs2Version = '2.3.10'
+  mockitoVersion = '1.9.5'
+  junitVersion = '4.11'
+  finatraVersion = '1.5.2'
+}
+
+configurations {
+  scalaLibrary
+  scalaCompiler
+}
+
+dependencies {
+  scalaLibrary "org.scala-lang:scala-library:$scalaVersion.$scalaVersionRevision"
+  scalaCompiler "org.scala-lang:scala-compiler:$scalaVersion.$scalaVersionRevision"
+
+  compile "org.scala-lang:scala-library:$scalaVersion.$scalaVersionRevision"
+  compile "com.twitter:finatra_$scalaVersion:$finatraVersion"
+  testCompile "junit:junit:${junitVersion}"
+  testCompile "org.mockito:mockito-core:$mockitoVersion"
+  testCompile "org.specs2:specs2_$scalaVersion:$specs2Version"
+}
+
+[compileJava, compileTestJava]*.options.collect { options -> options.encoding = 'UTF-8' }
+
+jar {
+  manifest {
+      attributes( "Main-Class": "com.inkenkun.x1.finatratoy" )
+  }
+}
+
+tasks.withType(ScalaCompile) {
+  scalaCompileOptions.useCompileDaemon = false
+  scalaCompileOptions.useAnt = false
+
+  configure(scalaCompileOptions.forkOptions) {
+      memoryMaximumSize = '1g'
+      jvmArgs = ['-XX:MaxPermSize=512m']
+  }
+}
+
+task assembleApplications(dependsOn: jar) {
+  doLast {
+    copy {
+      from configurations.runtime
+      into "$buildDir/archive/lib"
+    }
+    copy {
+      from jar.outputs.files
+      into "$buildDir/archive"
+    }
+  }
+}
