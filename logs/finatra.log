@@ -1,0 +1,67 @@
+INF [20140318-17:48:34.062] finatra: finatra process 66703 started
+INF [20140318-17:48:34.064] finatra: http server started on port: :7070
+INF [20140318-17:48:35.601] finatra: admin http server started on port: :9990
+INF [20140318-17:49:14.430] finatra: GET / 200 33ms
+INF [20140318-17:49:14.583] finatra: GET /favicon.ico 404 1ms
+INF [20140318-18:54:08.608] finatra: finatra process 67207 started
+INF [20140318-18:54:08.614] finatra: http server started on port: :7070
+INF [20140318-18:54:09.467] finatra: admin http server started on port: :9990
+ERR [20140318-18:54:29.696] finatra: Internal Server Error
+ERR [20140318-18:54:29.696] finatra: java.lang.IllegalArgumentException: File does not exist
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finatra.ResponseBuilder.static(ResponseBuilder.scala:184)
+ERR [20140318-18:54:29.696] finatra:     at com.inkenkun.x1.finatratoy.Root$$anonfun$1.apply(Root.scala:11)
+ERR [20140318-18:54:29.696] finatra:     at com.inkenkun.x1.finatratoy.Root$$anonfun$1.apply(Root.scala:10)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finatra.Controller$$anonfun$addRoute$1$$anonfun$apply$1.apply(Controller.scala:90)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finatra.Controller$$anonfun$addRoute$1$$anonfun$apply$1.apply(Controller.scala:90)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finagle.stats.StatsReceiver$class.timeFuture(StatsReceiver.scala:79)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finagle.stats.NameTranslatingStatsReceiver.timeFuture(StatsReceiver.scala:180)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finagle.stats.StatsReceiver$class.timeFuture(StatsReceiver.scala:88)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finagle.stats.NameTranslatingStatsReceiver.timeFuture(StatsReceiver.scala:180)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finagle.stats.StatsReceiver$class.timeFuture(StatsReceiver.scala:95)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finagle.stats.NameTranslatingStatsReceiver.timeFuture(StatsReceiver.scala:180)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finatra.Controller$$anonfun$addRoute$1.apply(Controller.scala:89)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finatra.Controller$$anonfun$addRoute$1.apply(Controller.scala:88)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finatra.Router.dispatchRouteOrCallback(Router.scala:33)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finatra.Router.dispatch(Router.scala:14)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finatra.ControllerCollection$$anonfun$dispatch$1.apply(ControllerCollection.scala:29)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finatra.ControllerCollection$$anonfun$dispatch$1.apply(ControllerCollection.scala:28)
+ERR [20140318-18:54:29.696] finatra:     at scala.collection.LinearSeqOptimized$class.find(LinearSeqOptimized.scala:100)
+ERR [20140318-18:54:29.696] finatra:     at scala.collection.immutable.List.find(List.scala:84)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finatra.ControllerCollection.dispatch(ControllerCollection.scala:28)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finatra.AppService.attemptRequest(AppService.scala:51)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finatra.AppService.apply(AppService.scala:38)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finatra.AppService.apply(AppService.scala:23)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finagle.Service$$anon$1.apply(Service.scala:14)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finatra.FileService.apply(FileService.scala:120)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finatra.FileService.apply(FileService.scala:85)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finagle.Filter$$anon$2.apply(Filter.scala:69)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finagle.Service$$anon$1.apply(Service.scala:14)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finatra.LoggingFilter.apply(LoggingFilter.scala:11)
+ERR [20140318-18:54:29.696] finatra:     at com.twitter.finatra.LoggingFilter.apply(LoggingFilter.scala:8)
+ERR [20140318-18:54:29.696] finatra:     (...more...)
+INF [20140318-18:54:29.745] finatra: GET / 500 64ms
+INF [20140318-18:57:17.065] finatra: finatra process 67449 started
+INF [20140318-18:57:17.072] finatra: http server started on port: :7070
+INF [20140318-18:57:18.184] finatra: admin http server started on port: :9990
+INF [20140318-18:57:28.547] finatra: GET / 200 364ms
+INF [20140318-18:57:28.577] finatra: GET /css/main.css 200 1ms
+INF [20140318-18:57:28.577] finatra: GET /js/vendor/modernizr-2.6.2-respond-1.1.0.min.js 200 1ms
+INF [20140318-18:57:28.579] finatra: GET /css/normalize.min.css 200 3ms
+INF [20140318-18:57:28.579] finatra: GET /js/main.js 200 0ms
+INF [20140318-18:57:49.704] finatra: GET /favicon.ico 200 725ms
+INF [20140318-18:58:03.515] finatra: GET /index.html 200 1ms
+INF [20140318-18:58:03.528] finatra: GET /css/normalize.min.css 200 1ms
+INF [20140318-18:58:03.528] finatra: GET /js/vendor/modernizr-2.6.2-respond-1.1.0.min.js 200 1ms
+INF [20140318-18:58:03.535] finatra: GET /css/main.css 200 0ms
+INF [20140318-18:58:03.535] finatra: GET /js/main.js 200 1ms
+INF [20140318-18:58:49.775] finatra: GET /apple-touch-icon.png 200 1ms
+INF [20140318-19:01:33.817] finatra: finatra process 67491 started
+INF [20140318-19:01:33.824] finatra: http server started on port: :7070
+INF [20140318-19:01:34.592] finatra: admin http server started on port: :9990
+INF [20140318-19:01:52.670] finatra: GET /readme 404 23ms
+INF [20140318-19:02:43.342] finatra: finatra process 67498 started
+INF [20140318-19:02:43.349] finatra: http server started on port: :7070
+INF [20140318-19:02:44.155] finatra: admin http server started on port: :9990
+INF [20140318-19:02:57.883] finatra: GET /readme 200 94ms
+INF [20140318-19:03:32.700] finatra: GET /readme 200 3ms
+INF [20140318-19:04:00.980] finatra: GET /favicon.ico 200 2ms
